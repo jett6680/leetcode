@@ -1,15 +1,16 @@
 function sort(arr) {
-    let selectIndex = 0
-    for(let i = 0; i< arr.length -1 ; i++) {
+    let selectIndex
+    let temp
+    for(let i = 0; i< arr.length - 1; i++) {
         selectIndex = i
-        for(let j = i + 1; j< arr.length; j++) {
-            if(arr[j] < arr[selectIndex]) {
+        for(let j = i + 1; j < arr.length; j ++) {
+            if(arr[selectIndex] < arr[j] ) {
                 selectIndex = j
             }
         }
-        const [a, b] = [ arr[i], arr[selectIndex]]
-        arr[i] = b
-        arr[selectIndex] = a
+        temp = arr[i]
+        arr[i] = arr[selectIndex]
+        arr[selectIndex] = temp
     }
     console.log('排序后: %j', arr)
 }
